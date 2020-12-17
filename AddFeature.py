@@ -1,4 +1,8 @@
-# ADD CITY COLUMN
+# ADD COLUMN
+import os
+import pandas as pd
+import numpy as np
+#
 def get_partner(distribution):
   return distribution.split(",")[0].strip(" ")
 
@@ -14,6 +18,7 @@ def get_city(distribution):
 def get_state(distribution):
   return distribution.split(",")[4].strip(" ").split(" ")[0]
 
+#
 df = pd.read_csv('df.csv')
 #df['Levels'] = df['Distribution'].apply(lambda x: f"{get_city(x)} {get_state(x)}")
 df['Quantity'] = df['Distribution'].apply(lambda x: f"{get_quantity(x)}")
