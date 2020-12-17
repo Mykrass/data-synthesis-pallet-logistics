@@ -27,7 +27,7 @@ def generate_random_day(month):
   day_range = calendar.monthrange(2020,month)[1]
   return random.randint(1,day_range)
 
-###Создать список контрагентов
+### Agents list
 
 def generate_random_agents():
   agent_names = ['Producer_', 'Retail_', 'L_opperator_', 'P_opperator_']
