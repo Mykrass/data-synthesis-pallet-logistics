@@ -13,5 +13,11 @@ This code could be creating an archive with twelve excel files. Files simulate m
     !mv ./*.csv ./SalesData
     
 4. %run ArchivationCreatedFiles.py
-4. %run MergeAndCleanDate.py
-5. %run AddFeature.py
+   
+   !ls -GFlash --color ./
+5. %run MergeAndCleanDate.py
+   
+   df
+6. %run AddFeature.py
+
+   df
