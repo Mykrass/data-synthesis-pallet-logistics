@@ -1,3 +1,3 @@
 #Create folder for files
-!mkdir ./SalesData
-!mv ./*.csv ./SalesData
+mkdir ./SalesData
+mv ./*.csv ./SalesData
