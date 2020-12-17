@@ -27,4 +27,24 @@ df['Quantity'] = df['Distribution'].apply(lambda x: f"{get_quantity(x)}")
 df['Partner'] = df['Distribution'].apply(lambda x: f"{get_partner(x)}")
 
 df['Way'] = df['Distribution'].apply(lambda x: f"{get_way(x)}")
-df.to_csv("df.csv", index=False)
+
+df['Key'] = df['Way'].str[-4:-3]
+dictionary = {'<':-1, '>':1}
+df['Key'].map(dictionary)
+
+df['Date'] = pd.to_datetime(df['Date'])
+df['Day'] = df['Date'].dt.date
+df['Day_of_year'] = df['Date'].dt.dayofyear
+df['Month'] = df['Date'].dt.month_name()
+df['Week_of_year'] = df['Date'].dt.isocalendar().week
+df['Weekday'] = df['Date'].dt.day_name()
+df= df[df['Weekday']!='Saturday']
+df= df[df['Weekday']!='Sunday']
+df['Hour'] = pd.to_datetime(df['Date']).dt.hour
+df['Minute'] = pd.to_datetime(df['Date']).dt.minute
+df['Quantity'] = pd.to_numeric(df['Quantity']) * df['Key'].map(dictionary)
+df['Price'] = pd.to_numeric(df['Price'])
+df['Sales'] = df['Quantity'] * df['Price']
+df= df[df['Hour']>7]
+df= df[df['Hour']<19]
+df.to_csv('Sinthetic_Data.csv', index=False)
