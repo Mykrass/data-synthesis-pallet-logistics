@@ -1,0 +1,5 @@
+
+./data-synthesis-pallet-logistics/GenDataFiles.py
+./data-synthesis-pallet-logistics/ArhivationCreatedFiles.py
+./data-synthesis-pallet-logistics/MergeAndCleanData.py
+./data-synthesis-pallet-logistics/AddFeature.py
