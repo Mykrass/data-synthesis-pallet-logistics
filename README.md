@@ -7,3 +7,5 @@ This code could be creating an archive with twelve excel files. Files simulate m
     
     !mv ./*.csv ./SalesData
 3. Run ArchivationCreatedFiles.py
+4. Run MergeAndCleanDate.py
+5. Run AddFeature.py
