@@ -2,10 +2,6 @@ import zipfile
 import os
 import sys
 
-#Create folder for files
-!mkdir ./SalesData
-!mv ./*.csv ./SalesData
-
 #zip folder
 zipname = 'synthetic_sales_data'
 def zipfolder(foldername, target_dir):
