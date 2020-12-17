@@ -14,11 +14,12 @@ def get_city(distribution):
 def get_state(distribution):
   return distribution.split(",")[4].strip(" ").split(" ")[0]
 
-
+df = pd.read_csv('df.csv')
 #df['Levels'] = df['Distribution'].apply(lambda x: f"{get_city(x)} {get_state(x)}")
 df['Quantity'] = df['Distribution'].apply(lambda x: f"{get_quantity(x)}")
 #df['City'] = df['Distribution'].apply(lambda x: f"{get_city(x)}")
 #df['State'] = df['Distribution'].apply(lambda x: f"{get_state(x)}")
 df['Partner'] = df['Distribution'].apply(lambda x: f"{get_partner(x)}")
+
 df['Way'] = df['Distribution'].apply(lambda x: f"{get_way(x)}")
-df
+df.to_csv("df.csv", index=False)
