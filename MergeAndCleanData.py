@@ -20,3 +20,4 @@ data_raw = pd.read_csv("all_data.csv")
 data=data_raw.dropna().copy()
 
 df = data[data['Price']!='Price'].copy()
+df
